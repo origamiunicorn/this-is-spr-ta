@@ -1,35 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylsheet" type="text/css" href="/styles/styles.css">
+
     <title>The Good Knight</title>
 </head>
 
 <body>
     <div class="container">
-        <h1> What is your name?</h1>
-        <label for="name"><b>first name</b></label>
+        <h1> The Good Knight</h1>
+        <p> What's your name?</p>
+        <label for="name"><b> -</b></label>
         <input type="name" placeholder="your name here" name="user_name" required>
 
         <br>
         <br>
         <br>
         <p> Which clan do you now belong to?</p>
-        <input type="radio" name="rabbit" value="rabbit"> Rabbit<br>
-        <input type="radio" name="tiger" value="tiger"> Tiger<br>
-        <input type="radio" name="monkey" value="monkey"> Monkey<br>
-        <input type="radio" name="raven" value="raven"> Raven
+        <form action="#">
+            <p>
+                <label>
+                    <input name="rabbit" type="radio" checked />
+                    <span>Rabbit</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="tiger" type="radio" />
+                    <span>Tiger</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input class="monkey" name="group1" type="radio" />
+                    <span>Monkey</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="raven" type="radio" disabled="disabled" />
+                    <span>Raven</span>
+                </label>
+            </p>
+        </form>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
 
 
 
 
     </div>
 
-
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
