@@ -32,7 +32,11 @@ module.exports = function (app) {
     });
   });
 
-
+  app.get("/story/:id", function (req, res) {
+    db.Story.findOne({ where: { id: req.params.id } }).then(function (data) {
+      res.render("story", data.dataValues);
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

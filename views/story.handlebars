@@ -1,0 +1,16 @@
+<div class="container">
+    <h5>Example Story Page</h5>
+
+    <p>
+        <strong>Story Body</strong>: {{body}}
+    </p>
+    <p>
+        <strong>Choices</strong>:
+    </p>
+
+    {{#each story.choice}}
+    <p>
+        <a href="/{{routeId}}">{{description}}</a>
+    </p>
+    {{/each}}
+</div>
