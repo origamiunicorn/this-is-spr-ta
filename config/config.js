@@ -1,15 +1,15 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": "Tinkles01",
-    "database": "exampledb",
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_DEV,
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Tinkles01",
-    "database": "testdb",
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_TEST,
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
