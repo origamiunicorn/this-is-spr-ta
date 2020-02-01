@@ -1,5 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
     var Story = sequelize.define("Story", {
+        storyId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         body: {
             type: DataTypes.TEXT,
             // AllowNull is a flag that restricts a story from being entered if it doesn't

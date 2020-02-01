@@ -1,5 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
-    var GameInfo = sequelize.define("GameInfo", {}, {
+    var GameInfo = sequelize.define("GameInfo", {
+        clanName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        charName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
+    }, {
         freezeTableName: true // Model tableName will be the same as the model name
     });
 

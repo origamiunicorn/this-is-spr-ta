@@ -32,8 +32,14 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/story/:id", function (req, res) {
-    db.Story.findOne({ where: { id: req.params.id } }).then(function (data) {
+  app.get("/story/:story_id", function (req, res) {
+    db.Story.findOne({
+      where: {
+        id: req.params.story_id
+      },
+      include: [db.Choice]
+    }).then(function (data) {
+      console.log(data.dataValues.Choices)
       res.render("story", data.dataValues);
     });
   });
