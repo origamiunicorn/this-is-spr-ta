@@ -39,7 +39,7 @@ module.exports = function (app) {
       },
       include: [db.Choice]
     }).then(function (data) {
-      console.log(data.dataValues.Choices)
+      data.dataValues.body = db.Story.replaceCharName(data.dataValues.body);
       res.render("story", data.dataValues);
     });
   });
