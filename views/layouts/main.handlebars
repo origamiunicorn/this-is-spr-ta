@@ -35,12 +35,15 @@
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">The Good Knight </a>
+        &nbsp;
+        <a href="/" class="brand-logo flow-text">One Good Knight</a>
+        {{!-- Right now our nav hides on mobile, and then we have no nav. We should see about having a mobile nav menu. Materialize has options, let's investigate! --}}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/">home</a></li>
-          <li><a href="/example">example</a></li>
-          <li><a href="/signin">signin</a></li>
-
+          <li><a href="/">Home</a></li>
+          {{!-- Login should go to the sign in page, renamed login for clarity? Login could be a modal that pops up on selecting this link. --}}
+          <li><a href="/example">Login</a></li>
+          {{!-- Sign Up should go to a sign up page, or a sign up modal that pops up on selecting this link. --}}
+          <li><a href="/signin">Sign Up</a></li>
         </ul>
       </div>
     </nav>
