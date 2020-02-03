@@ -1,13 +1,36 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: 
+  linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
+  linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
+  linear-gradient(315deg, black 25%, transparent 25%),
+  linear-gradient(45deg, black 25%, transparent 25%);	
+  background-size: 2em 2em;
+  background-color: #232323;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
 
-.container {
-  color: black;
-  background-color: ghostwhite;
+a.brand-logo {
+  text-decoration: none;
+  padding-left: 10px;
 }
 
-p {
+.body-container {
+  color: black;
+  background-color: ghostwhite;
+  padding: 15px;
+}
+
+p.parabody {
   white-space: pre-line;
 }
 
@@ -20,14 +43,3 @@ and (min-device-width : 375px)
 and (max-device-width : 812px) 
 and (-webkit-device-pixel-ratio : 3)
 and (orientation : portrait) { /* STYLES GO HERE */ }
-
-
-body {
-  background: 
-  linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(315deg, black 25%, transparent 25%),
-  linear-gradient(45deg, black 25%, transparent 25%);	
-  background-size: 2em 2em;
-  background-color: #232323;
-}

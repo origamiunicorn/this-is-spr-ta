@@ -1,16 +1,15 @@
-<div class="container">
-    <h5>Example Story Page</h5>
+<div class="row">
+    <div class="column col s12">
+        <p class="parabody flow-text">
+            {{body}}
+        </p>
 
-    <p>
-        <strong>Story Body</strong>: {{body}}
-    </p>
-    <p>
-        <strong>Choices</strong>:
-    </p>
+        <hr />
 
-    {{#each Choices}}
-    <p>
-        <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
-    </p>
-    {{/each}}
+        {{#each Choices}}
+        <p class="flow-text">
+            <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
+        </p>
+        {{/each}}
+    </div>
 </div>
