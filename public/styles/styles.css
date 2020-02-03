@@ -31,6 +31,7 @@ a.brand-logo {
 }
 
 p.parabody {
+  margin-top: -20px;
   white-space: pre-line;
 }
 
