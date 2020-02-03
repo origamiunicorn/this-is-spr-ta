@@ -36,6 +36,7 @@
       <div class="nav-wrapper">
         <div class="container">
           &nbsp;
+          {{!-- Currently, this logo doesn't act responsive to mobile from what RW is seeing in testing. We should fix this while we're making the mobile versions have a menu. Presently, they do not. --}}
           <a href="/" class="brand-logo flow-text">One Good Knight</a>
           {{!-- Right now our nav hides on mobile, and then we have no nav. We should see about having a mobile nav menu. Materialize has options, let's investigate! --}}
           <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -51,13 +52,14 @@
   </header>
 
   <main>
+    {{!-- Added the body-container as the container class is used for more than just the body. Defining anything to the container class was causing issues in the footer and header. --}}
     <div class="container body-container">
       {{{body}}}
     </div>
   </main>
 
-  <footer class="page-footer footer-container">
-    <div class="container footer-container">
+  <footer class="page-footer">
+    <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">One Good Knight</h5>
@@ -73,13 +75,14 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright footer-container">
+    <div class="footer-copyright">
       <div class="container">
         © 2020 Copyright
       </div>
     </div>
   </footer>
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
