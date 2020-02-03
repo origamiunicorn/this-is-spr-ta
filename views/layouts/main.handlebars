@@ -17,7 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
 
-{{!-- What are these different minified jquerys for? Do we need all of them?--}}
+  {{!-- What are these different minified jquerys for? Do we need all of them?--}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -31,7 +31,8 @@
 </head>
 
 <body>
-  <div class="container">
+
+  <header>
     <nav>
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">The Good Knight </a>
@@ -43,9 +44,38 @@
         </ul>
       </div>
     </nav>
+  </header>
 
-    {{{body}}}
-  </div>
+  <main>
+    <div class="container">
+      {{{body}}}
+    </div>
+  </main>
+
+  <footer class="page-footer footer-container">
+    <div class="container footer-container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">One Good Knight</h5>
+          <p class="grey-text text-lighten-4">a text adventure game by This Is SPR-ta!</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/origamiunicorn/this-is-spr-ta"
+                target="_blank">GitHub
+                Repo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright footer-container">
+      <div class="container">
+        © 2020 Copyright
+      </div>
+    </div>
+  </footer>
+
   <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
