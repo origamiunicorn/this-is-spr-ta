@@ -3,10 +3,18 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
+    var loggedIn = 0; uname = '';
+
+    if (req.session && req.session.passport && req.session.passport.user) {
+      loggedIn = 1;
+      uname = req.session.passport.user.name;
+    }
+
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        msg: `Welcome ${uname}`,
+        examples: dbExamples,
+        loggedIn: loggedIn
       });
     });
   });

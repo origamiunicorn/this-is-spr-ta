@@ -37,8 +37,13 @@
         <a href="/" class="brand-logo">The Good Knight </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/">home</a></li>
+          {{#if loggedIn}}
+          <li>{{msg}}</li>
+          <li><a href="/logout">Logout</a></li>
+          {{else}}
           <li><a href="/example">example</a></li>
           <li><a href="/signin">signin</a></li>
+          {{/if}}
 
         </ul>
       </div>
