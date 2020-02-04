@@ -19,9 +19,9 @@
   {{!-- What are these different minified jquerys for? Do we need all of them?--}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></!--script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
 
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 
@@ -41,10 +41,15 @@
           {{!-- Right now our nav hides on mobile, and then we have no nav. We should see about having a mobile nav menu. Materialize has options, let's investigate! --}}
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
+            {{#if loggedIn}}
+            <li>{{msg}}</li>
+            <li><a href="/logout">Logout</a></li>
+            {{else}}
             {{!-- Login should go to the sign in page, renamed login for clarity? Login could be a modal that pops up on selecting this link. --}}
             <li><a href="/example">Login</a></li>
             {{!-- Sign Up should go to a sign up page, or a sign up modal that pops up on selecting this link. --}}
             <li><a href="/signin">Sign Up</a></li>
+            {{/if}}
           </ul>
         </div>
       </div>
