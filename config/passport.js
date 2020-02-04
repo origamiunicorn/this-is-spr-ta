@@ -42,7 +42,19 @@ passport.serializeUser(function (user, cb) {
 });
 
 passport.deserializeUser(function (obj, cb) {
-  cb(null, obj);
+  //cb(null, obj);
+  db.User.findByPk(obj.id).then(function (user) {
+    if (user) {
+
+      cb(null, user.get());
+
+    } else {
+
+      cb(user.errors, null);
+
+    }
+
+  });
 });
 
 // Exporting our configured passport
