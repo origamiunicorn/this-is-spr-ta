@@ -50,7 +50,7 @@ function loginUser(email, password) {
         password: password
     })
         .then(function () {
-            window.location.replace("/");
+            window.location.replace("/dashboard");
             // If there's an error, log the error
         })
         .catch(function (err) {
