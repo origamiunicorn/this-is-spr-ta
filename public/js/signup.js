@@ -14,9 +14,9 @@ var API = {
             data: JSON.stringify(user)
         });
     },
-    getExamples: function () {
+    getUser: function () {
         return $.ajax({
-            url: "api/examples",
+            url: "api/user",
             type: "GET"
         });
     },
@@ -88,6 +88,6 @@ var handleFormSubmit = function (event) {
 }
 
 function handleLoginErr(err) {
-    $("#alert .msg").text(err);
-    $("#alert").fadeIn(500);
+    $("#alert_signup .msg").text(err);
+    $("#alert_signup").fadeIn(500);
 }
