@@ -9,7 +9,6 @@ module.exports = function (app) {
     res.render("index");
   });
 
-
   app.get("/signin", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("signin", {
