@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Game Info</h5>
+                    {{#each data}}
+                    <p><strong>Clan</strong>: {{dataValues.clanName}}</p>
+
+                    <p>
+                        <strong>Character</strong>: {{dataValues.charName}}</p>
+                    <p>
+                        <strong><a href="story/{{ dataValues.lastStoryId }}"> Continue game</a> </strong> </p>
+                    {{/each}}
+                    <a href="/">← Back To Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
