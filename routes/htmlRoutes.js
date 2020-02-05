@@ -30,7 +30,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/game", function (req, res) {
+  app.get("/game", isAuthenticated, function (req, res) {
     db.GameInfo.findAll({}).then(function (data) {
       res.render("game", { data: data });
     });
