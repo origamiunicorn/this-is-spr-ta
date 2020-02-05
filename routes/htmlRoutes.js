@@ -30,6 +30,12 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/game", function (req, res) {
+    db.GameInfo.findAll({}).then(function (data) {
+      res.render("game", { data: data });
+    });
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the non logged in homepage
   app.get("/dashboard", isAuthenticated, function (req, res) {
