@@ -9,23 +9,11 @@ module.exports = function (app) {
     res.render("index");
   });
 
-
   app.get("/signin", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("signin", {
         msg: "Welcome!",
         examples: dbExamples
-      });
-    });
-  });
-
-
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
       });
     });
   });
@@ -39,6 +27,12 @@ module.exports = function (app) {
     }).then(function (data) {
       data.dataValues.body = db.Story.replaceCharName(data.dataValues.body);
       res.render("story", data.dataValues);
+    });
+  });
+
+  app.get("/game", function (req, res) {
+    db.GameInfo.findAll({}).then(function (data) {
+      res.render("game", { data: data });
     });
   });
 
