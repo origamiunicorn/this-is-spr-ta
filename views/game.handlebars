@@ -1,20 +1,21 @@
-<div class="container">
-    <div class="row">
-        <div class="col-8 offset-2">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Game Info</h5>
-                    {{#each data}}
-                    <p><strong>Clan</strong>: {{dataValues.clanName}}</p>
+<div class="row">
+    <div class="col s12">
 
+        {{#each data}}
+        <div class="row"
+            style="background-image: url(/images/ClanTigerSM3.png); background-repeat: no-repeat; background-position: left-center;">
+            <div class="col s9 offset-s3">
+                <div class="card" style="background: rgba(255, 255, 255, 0.7)">
+                    <h5 class="card-title">{{dataValues.charName}}</h5>
+                    <strong>Of the {{dataValues.clanName}} Clan</strong>
                     <p>
-                        <strong>Character</strong>: {{dataValues.charName}}</p>
-                    <p>
-                        <strong><a href="story/{{ dataValues.lastStoryId }}"> Continue game</a> </strong> </p>
-                    {{/each}}
-                    <a href="/">← Back To Home</a>
+                        <strong><a href="story/{{ dataValues.lastStoryId }}"> Continue Game</a> </strong>
+                    </p>
                 </div>
             </div>
         </div>
+        {{/each}}
+
+        <a href="/">← Back To Home</a>
     </div>
 </div>
