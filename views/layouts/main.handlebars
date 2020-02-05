@@ -12,11 +12,11 @@
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 
@@ -32,7 +32,7 @@
         <div class="container">
           &nbsp;
           {{!-- Currently, this logo doesn't act responsive to mobile from what RW is seeing in testing. We should fix this while we're making the mobile versions have a menu. Presently, they do not. --}}
-          <a href="/" class="brand-logo flow-text">One Good Knight</a>
+          <a href="/" class="brand-logo" id="nav-logo">One Good Knight</a>
           {{!-- Right now our nav hides on mobile, and then we have no nav. We should see about having a mobile nav menu. Materialize has options, let's investigate! --}}
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
@@ -41,9 +41,9 @@
             <li><a href="/logout">Logout</a></li>
             {{else}}
             {{!-- Login should go to the sign in page, renamed login for clarity? Login could be a modal that pops up on selecting this link. --}}
-            <li><a href="/example">Login</a></li>
+            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             {{!-- Sign Up should go to a sign up page, or a sign up modal that pops up on selecting this link. --}}
-            <li><a href="/signin">Sign Up</a></li>
+            <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
             {{/if}}
           </ul>
         </div>
@@ -54,6 +54,18 @@
   <main>
     {{!-- Added the body-container as the container class is used for more than just the body. Defining anything to the container class was causing issues in the footer and header. --}}
     <div class="container body-container">
+      <div id="loginmodal" class="modal">
+        <div class="modal-content">
+          {{> login/login-block}}
+        </div>
+      </div>
+
+      <div id="signupmodal" class="modal">
+        <div class="modal-content">
+          {{> signup/signup-block}}
+        </div>
+      </div>
+
       {{{body}}}
     </div>
   </main>
@@ -77,11 +89,13 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2020 Copyright
+        Copyright © 2020 This Is SPR-ta!
       </div>
     </div>
   </footer>
 
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 
 </html>
