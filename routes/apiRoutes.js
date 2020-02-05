@@ -23,13 +23,21 @@ module.exports = function (app, passport) {
   });
 
   // Create a new user
-  app.post("/api/user", function (req, res) {
+  app.post("/api/user", function (req, res, next) {
     db.User.create(req.body)
-      .then(function (dbUser) {
-        res.json(dbUser);
+      .then(function () {
+        //res.json(dbUser);
+        passport.authenticate('local', function (err, user, info) {
+          if (info) { return next(info.message); }
+          //if (!user) { return res.redirect('/login'); }
+          req.logIn(user, function (err) {
+            //console.log(req.session);
+            if (err) { return next(err); }
+            return res.redirect('/');
+          });
+        })(req, res, next);
       })
       .catch(function (err) {
-        //res.status(401).json({ error: err });
         res.json({ error: err });
       });
   });
