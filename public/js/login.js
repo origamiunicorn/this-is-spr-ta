@@ -59,6 +59,6 @@ function loginUser(email, password) {
 }
 
 function handleLoginErr(err) {
-    $("#alert_login .msg").text(err);
+    $("#alert_login .msg").html(err);
     $("#alert_login").fadeIn(500);
 }
