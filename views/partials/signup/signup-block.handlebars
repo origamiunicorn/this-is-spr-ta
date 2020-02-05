@@ -1,0 +1,26 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/signup.js"></script>
+
+<h3>Sign Up for One Good Knight</h3>
+<p>Please fill in this form to create an account.</p>
+<hr>
+<form name="signupfrm" class="signup">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" id="name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" id="email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+    <label for="psw_repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" id="psw_repeat" name="psw_repeat" required>
+
+    <div style="display: none" id="alert_signup" class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span> <span class="alert_signup_msg"></span>
+    </div>
+
+    <button id="savebtn" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</form>

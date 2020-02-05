@@ -43,7 +43,7 @@
             {{!-- Login should go to the sign in page, renamed login for clarity? Login could be a modal that pops up on selecting this link. --}}
             <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             {{!-- Sign Up should go to a sign up page, or a sign up modal that pops up on selecting this link. --}}
-            <li><a href="/signin">Sign Up</a></li>
+            <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
             {{/if}}
           </ul>
         </div>
@@ -58,8 +58,11 @@
         <div class="modal-content">
           {{> login/login-block}}
         </div>
-        <div class="modal-footer">
+      </div>
 
+      <div id="signupmodal" class="modal">
+        <div class="modal-content">
+          {{> signup/signup-block}}
         </div>
       </div>
 
