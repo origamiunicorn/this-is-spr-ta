@@ -11,12 +11,12 @@
 
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 
@@ -32,7 +32,7 @@
         <div class="container">
           &nbsp;
           {{!-- Currently, this logo doesn't act responsive to mobile from what RW is seeing in testing. We should fix this while we're making the mobile versions have a menu. Presently, they do not. --}}
-          <a href="/" class="brand-logo flow-text">One Good Knight</a>
+          <a href="/" class="brand-logo" id="nav-logo">One Good Knight</a>
           {{!-- Right now our nav hides on mobile, and then we have no nav. We should see about having a mobile nav menu. Materialize has options, let's investigate! --}}
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
@@ -41,7 +41,7 @@
             <li><a href="/logout">Logout</a></li>
             {{else}}
             {{!-- Login should go to the sign in page, renamed login for clarity? Login could be a modal that pops up on selecting this link. --}}
-            <li><a href="/example">Login</a></li>
+            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             {{!-- Sign Up should go to a sign up page, or a sign up modal that pops up on selecting this link. --}}
             <li><a href="/signin">Sign Up</a></li>
             {{/if}}
@@ -54,6 +54,16 @@
   <main>
     {{!-- Added the body-container as the container class is used for more than just the body. Defining anything to the container class was causing issues in the footer and header. --}}
     <div class="container body-container">
+      <div id="loginmodal" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
       {{{body}}}
     </div>
   </main>
@@ -77,11 +87,13 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2020 Copyright
+        Copyright © 2020 This Is SPR-ta!
       </div>
     </div>
   </footer>
 
+
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 
 </html>
