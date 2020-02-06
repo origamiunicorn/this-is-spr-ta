@@ -35,11 +35,12 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             {{#if loggedIn}}
-            <li>{{msg}}</li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                {{msg}}
+                <i class="material-icons right">more_vert</i></a></li>
             {{else}}
-            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
+            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             {{/if}}
           </ul>
           <div class="right">
@@ -47,6 +48,14 @@
           </div>
         </div>
     </nav>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Dashboard</a></li>
+      <li><a href="#!">Game Info</a></li>
+      <li><a href="#!">Start New Game</a></li>
+      <li><a href="#!">Update Profile</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
 
     <ul id="slide-out" class="sidenav">
       {{#if loggedIn}}
@@ -55,7 +64,7 @@
           <div class="background">
             <img src="/images/stardust.png">
           </div>
-          <a href="#user"><img class="circle" src="images/ClanTigerSM3.png"></a>
+          <a href="#user"><img class="circle" src="images/loginicon.png"></a>
           <a href="#name"><span class="white-text name">{{name}}</span></a>
           <a href="#email"><span class="white-text email">{{email}}</span></a>
         </div>
@@ -66,8 +75,8 @@
       <li><a href="/logout">Logout</a></li>
       {{else}}
       <li><a href="/">Home</a></li>
-      <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
       <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
+      <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
       {{/if}}
     </ul>
   </header>

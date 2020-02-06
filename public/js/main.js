@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    $('.modal').modal();
-});
-
-$(document).ready(function () {
     $('.sidenav').sidenav();
+    $('.modal').modal();
+    $(".dropdown-trigger").dropdown({ hover: false, coverTrigger: false });
 });
