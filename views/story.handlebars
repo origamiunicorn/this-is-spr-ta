@@ -1,13 +1,13 @@
 <div class="row story-row">
     <div class="column col s12">
-        <p class="parabody flow-text">
+        <p class="parabody">
             {{body}}
         </p>
 
         <div class="divider story-divider"></div>
 
         {{#each Choices}}
-        <p class="flow-text">
+        <p>
             <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
         </p>
         {{/each}}

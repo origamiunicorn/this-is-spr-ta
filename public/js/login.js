@@ -38,7 +38,6 @@ var handleLogin = function (event) {
             var email = $("#inputEmail").val();
             var password = $("#inputPassword").val();
 
-
             loginUser(email, password);
         }
     });

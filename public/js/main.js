@@ -1,8 +1,7 @@
 $(document).ready(function () {
     $('.modal').modal();
-    $('sidenav').sidenav();
 });
 
-
-
-
+$(document).ready(function () {
+    $('.sidenav').sidenav();
+});
