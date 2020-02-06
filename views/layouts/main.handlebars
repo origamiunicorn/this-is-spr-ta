@@ -30,40 +30,63 @@
     <nav>
       <div class="nav-wrapper">
         <div class="container">
-          <a href="/" id="smalltext" class="brand-logo flow-text">One Good Knight</a>
+          <a href="/" id="smalltext" class="brand-logo flow-text"><i class="material-icons">brightness_3</i> One Good
+            Knight</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             {{#if loggedIn}}
-            <li>{{msg}}</li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                {{msg}}
+                <i class="material-icons right">more_vert</i></a></li>
             {{else}}
-            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
+            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
             {{/if}}
           </ul>
+          <div class="right">
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          </div>
         </div>
     </nav>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Dashboard</a></li>
+      <li><a href="#!">Game Info</a></li>
+      <li><a href="#!">Start New Game</a></li>
+      <li><a href="#!">Update Profile</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <ul id="slide-out" class="sidenav">
+      {{#if loggedIn}}
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="/images/stardust.png">
+          </div>
+          <a href="#user"><img class="circle" src="images/loginicon.png"></a>
+          <a href="#name"><span class="white-text name">{{name}}</span></a>
+          <a href="#email"><span class="white-text email">{{email}}</span></a>
+        </div>
+      </li>
+      <li>
+        <div class="center">{{msg}}</div>
+      </li>
+      <li><a href="#!">Dashboard</a></li>
+      <li><a href="#!">Game Info</a></li>
+      <li><a href="#!">Start New Game</a></li>
+      <li><a href="#!">Update Profile</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Logout</a></li>
+      {{else}}
+      <li><a href="/">Home</a></li>
+      <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
+      <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
+      {{/if}}
+    </ul>
   </header>
 
-
-  {{!-- <nav class="nav-extended">
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo"></a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li> 
-  </ul>
-  </div>
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">JavaScript</a></li>
-  </ul>  --}}
-
   <main>
-    {{!-- Added the body-container as the container class is used for more than just the body. Defining anything to the container class was causing issues in the footer and header. --}}
     <div class="container body-container">
       <div id="loginmodal" class="modal">
         <div class="modal-content">
@@ -78,6 +101,7 @@
       </div>
 
       {{{body}}}
+
     </div>
   </main>
 

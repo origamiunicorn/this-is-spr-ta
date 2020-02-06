@@ -1,8 +1,5 @@
 $(document).ready(function () {
+    $('.sidenav').sidenav();
     $('.modal').modal();
-    $('sidenav').sidenav();
+    $(".dropdown-trigger").dropdown({ hover: false, coverTrigger: false });
 });
-
-
-
-
