@@ -6,7 +6,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    res.render("index");
+    return (loggedIn) ? res.redirect('/profile') : res.render("index");
   });
 
   app.get("/signin", function (req, res) {
@@ -18,7 +18,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/story/:story_id", function (req, res) {
+  app.get("/story/:story_id", isAuthenticated, function (req, res) {
     db.Story.findOne({
       where: {
         id: req.params.story_id
@@ -32,29 +32,19 @@ module.exports = function (app) {
 
   app.get("/game", isAuthenticated, function (req, res) {
     db.GameInfo.findAll({}).then(function (data) {
-      res.render("game", { data: data });
+      uObj.data = data;
+      res.render("game", uObj);
     });
+  });
+
+  app.get("/start", isAuthenticated, function (req, res) {
+    res.render("start", uObj);
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the non logged in homepage
-  app.get("/dashboard", isAuthenticated, function (req, res) {
-    var loggedIn = 0; uname = '';
-
-    if (req.session && req.session.passport && req.session.passport.user) {
-      loggedIn = 1;
-      uname = req.session.passport.user.name;
-      umail = req.session.passport.user.email;
-    }
-
-    //db.Example.findAll({}).then(function (dbExamples) {
-    res.render("dashboard", {
-      msg: `Welcome, ${uname}`,
-      name: `${uname}`,
-      email: `${umail}`,
-      loggedIn: loggedIn
-    });
-    //});
+  app.get("/profile", isAuthenticated, function (req, res) {
+    res.render("profile", uObj);
   });
 
   // Render 404 page for any unmatched routes

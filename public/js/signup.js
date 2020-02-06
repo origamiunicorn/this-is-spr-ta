@@ -80,7 +80,7 @@ var handleFormSubmit = function (event) {
                     handleLoginErr(data.error.errors[0].message);
                 } else {
                     $("form[name='signupfrm']").trigger("reset");
-                    window.location.replace("/dashboard");
+                    window.location.replace("/profile");
                 }
             });
         }
