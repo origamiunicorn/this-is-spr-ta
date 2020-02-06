@@ -23,7 +23,7 @@ module.exports = function (app, passport) {
       });
   });
 
-
+  // Route for logging user in
   app.post('/login', function (req, res, next) {
     auth(passport, req, res, next)(req, res, next);
   });
@@ -31,9 +31,7 @@ module.exports = function (app, passport) {
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.session.destroy(function (err) {
-
       res.redirect('/');
-
     });
   });
 };

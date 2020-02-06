@@ -49,13 +49,23 @@
     </nav>
 
     <ul id="slide-out" class="sidenav">
-      <li><a href="/">Home</a></li>
       {{#if loggedIn}}
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="/images/stardust.png">
+          </div>
+          <a href="#user"><img class="circle" src="images/ClanTigerSM3.png"></a>
+          <a href="#name"><span class="white-text name">{{name}}</span></a>
+          <a href="#email"><span class="white-text email">{{email}}</span></a>
+        </div>
+      </li>
       <li>
         <div class="center">{{msg}}</div>
       </li>
       <li><a href="/logout">Logout</a></li>
       {{else}}
+      <li><a href="/">Home</a></li>
       <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
       <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
       {{/if}}

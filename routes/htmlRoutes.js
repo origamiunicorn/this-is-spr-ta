@@ -44,11 +44,14 @@ module.exports = function (app) {
     if (req.session && req.session.passport && req.session.passport.user) {
       loggedIn = 1;
       uname = req.session.passport.user.name;
+      umail = req.session.passport.user.email;
     }
 
     //db.Example.findAll({}).then(function (dbExamples) {
     res.render("dashboard", {
-      msg: `Welcome ${uname}`,
+      msg: `Welcome, ${uname}`,
+      name: `${uname}`,
+      email: `${umail}`,
       loggedIn: loggedIn
     });
     //});
