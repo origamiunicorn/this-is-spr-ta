@@ -59,11 +59,11 @@ var handleFormSubmit = function (event) {
         },
         // Specify validation error messages
         messages: {
-            name: "Please enter your name",
-            email: "Please enter a valid email address",
+            name: "Please enter your name<br />",
+            email: "Please enter a valid email address<br />",
             psw: {
-                required: "Please enter a password",
-                minlength: "Your password must be at least 5 characters long"
+                required: "Please enter a password<br />",
+                minlength: "Your password must be at least 5 characters long<br />"
             }
         },
         // Make sure the form is submitted to the destination defined
@@ -80,7 +80,7 @@ var handleFormSubmit = function (event) {
                     handleLoginErr(data.error.errors[0].message);
                 } else {
                     $("form[name='signupfrm']").trigger("reset");
-                    window.location.replace("/dashboard");
+                    window.location.replace("/profile");
                 }
             });
         }

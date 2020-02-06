@@ -26,11 +26,9 @@ var handleLogin = function (event) {
         },
         // Specify validation error messages
         messages: {
-            inputEmail: "Please enter a valid email address.",
+            inputEmail: "Please enter a valid email address<br />",
             inputPassword: {
-                required: "Please enter a password.",
-                // Do we need this if it's a log in instead of a sign up?
-                minlength: "Your password must be at least 5 characters long."
+                required: "Please enter a password<br />"
             }
         },
         // Make sure the form is submitted to the destination defined
@@ -50,7 +48,7 @@ function loginUser(email, password) {
         password: password
     })
         .then(function () {
-            window.location.replace("/dashboard");
+            window.location.replace("/profile");
             // If there's an error, log the error
         })
         .catch(function (err) {
