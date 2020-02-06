@@ -2,13 +2,13 @@
     <div class="col s12">
 
         {{#each data}}
-        <div class="row gamerow" style="background-image: url(/images/Clan{{dataValues.clanName}}SM3.png);">
+        <div class="row gamerow" style="background-image: url('/images/Clan{{dataValues.clanName}}SM.png');">
             <div class="col gameoffset">
-                <div class="card" style="background: rgba(255, 255, 255, 0.7)">
+                <div class="card" style="background: rgba(250, 250, 250, 0.7)">
                     <div class="card-content">
                         <h5 class="gameheader">{{dataValues.charName}}</h5>
                         <strong>of the {{dataValues.clanName}} clan</strong>
-                        <br />
+                        <div class="divider"></div>
                         <strong><a href="story/{{dataValues.lastStoryId}}">Continue Game</a></strong>
                     </div>
                 </div>
