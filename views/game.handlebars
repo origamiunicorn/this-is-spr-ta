@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col s12">
-
+        {{#if data}}
         {{#each data}}
         <div class="row gamerow" style="background-image: url('/images/Clan{{dataValues.clanName}}SM.png');">
             <div class="col gameoffset">
@@ -22,6 +22,16 @@
             </div>
         </div>
         {{/each}}
+        {{else}}
+        <p>
+            You have yet to start any games, or have deleted any you had saved. Why not start a game now?
+        </p>
+        <div class="center-align">
+            <a class="waves-effect waves-light btn mobile-buttons" href="/start"><i
+                    class="material-icons left">brightness_7</i>Start
+                New Game</a>
+        </div>
+        {{/if}}
 
         <a href="/" class="valign-wrapper"><i class="small material-icons">arrow_back</i> Return to Profile</a>
 
