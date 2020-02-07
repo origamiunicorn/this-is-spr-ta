@@ -34,4 +34,17 @@ module.exports = function (app, passport) {
       res.redirect('/');
     });
   });
+
+  // Create a new game
+  app.post("/api/game", function (req, res) {
+    req.body.lastStoryId = 1;
+    req.body.UserId = req.user.id;
+    db.GameInfo.create(req.body)
+      .then(function (dbGame) {
+        res.json(dbGame);
+      })
+      .catch(function (err) {
+        res.json({ error: err });
+      });
+  });
 };
