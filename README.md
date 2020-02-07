@@ -38,3 +38,6 @@ This is all part of This Is SPR-ta's Project Two for UCLA's Fullstack Web Develo
 
 ## Stretch Goals
 * Tracking game progress to prevent players from going back and changing their answers to progress down a different path.
+* Update capabilities for User Profile. (Name, Email, Profile Image).
+* Administrative interface to add, delete, restructure story elements.
+* Addtional tracked and updated properties throughout the game, such as character HP, or effects related to a character's clan.
