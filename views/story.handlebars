@@ -1,12 +1,12 @@
 <div class="row story-row">
     <div class="col s12">
         <p class="parabody">
-            {{body}}
+            {{data.body}}
         </p>
 
         <div class="divider story-divider"></div>
 
-        {{#each Choices}}
+        {{#each data.Choices}}
         <p>
             <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
         </p>
