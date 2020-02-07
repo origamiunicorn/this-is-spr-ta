@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
         password: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        mostRecentGameId: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         }
     }, {
         freezeTableName: true // Model tableName will be the same as the model name

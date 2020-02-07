@@ -7,8 +7,8 @@ module.exports = function (req, res, next) {
 
     //if (req.session && req.session.passport && req.session.passport.user) {
     loggedIn = 1;
-    uname = req.session.passport.user.name;
-    umail = req.session.passport.user.email;
+    uname = req.user.name;
+    umail = req.user.email;
     //}
 
     uObj = {

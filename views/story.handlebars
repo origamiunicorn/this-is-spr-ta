@@ -7,7 +7,8 @@
         {{#if data.Choices}}
         {{#each data.Choices}}
         <p>
-            <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
+            <a href="javascript:void(0);" data-route-id="{{dataValues.routeId}}"
+                class="choiceLink">{{dataValues.description}}</a>
         </p>
 
         {{/each}}

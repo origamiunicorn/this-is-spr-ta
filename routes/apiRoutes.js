@@ -4,7 +4,7 @@ var auth = function (passport, req, res, next) {
     if (info) { return next(info.message); }
     if (!user) { return res.redirect('/login'); }
     req.logIn(user, function (loginErr) {
-      console.log(loginErr);
+      //console.log(loginErr);
       if (loginErr) { return res.json({ "err": loginErr }); }
       return res.redirect('/');
     });
@@ -36,19 +36,68 @@ module.exports = function (app, passport) {
     });
   });
 
+
+  app.put("/api/user/game", function (req, res) {
+    alert(req.body.mostRecentGameId);
+    var gameObj = {
+      mostRecentGameId: req.body.mostRecentGameId
+    }
+    db.GameInfo.update(
+      gameObj,
+      {
+        where: {
+          id: req.user.id
+        }
+      }).then(function (dbGame) {
+        res.json(dbGame);
+      });
+  });
+
   // Create a new game
   app.post("/api/game", function (req, res) {
     req.body.lastStoryId = 1;
     req.body.UserId = req.user.id;
     db.GameInfo.create(req.body)
       .then(function (dbGame) {
-        res.json(dbGame);
+        //req.user.gameId = dbGame.id;
+        var gameObj = {
+          mostRecentGameId: dbGame.id
+        }
+        db.GameInfo.update(
+          gameObj,
+          {
+            where: {
+              id: req.user.id
+            }
+          }).then(function (dbGame) {
+            res.json(dbGame);
+          }).catch(function (err) {
+            res.json({ error: err });
+          });
       })
       .catch(function (err) {
         res.json({ error: err });
       });
   });
 
+  // update the last story id for the game
+  app.put("/api/game", function (req, res) {
+    console.log(req.session);
+    var gameObj = {
+      lastStoryId: req.body.lastStoryId
+    }
+    db.GameInfo.update(
+      gameObj,
+      {
+        where: {
+          id: req.user.gameId
+        }
+      }).then(function (dbGame) {
+        res.json(dbGame);
+      });
+  });
+
+  // delete the game
   app.delete("/api/game/:id", function (req, res) {
     // Delete the Author with the id available to us in req.params.id
     db.GameInfo.destroy({

@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $(document).on("click", "#saveGameBtn", handleGameSubmit);
     $(document).on("click", ".deleteGameBtn", handleGameDelete);
+    $(document).on("click", ".choiceLink", handleLastStorySubmit);
+    $(document).on("click", ".continue_game", handleGameIdInSubmit);
 });
 
 var handleGameSubmit = function () {
@@ -28,7 +30,7 @@ var handleGameSubmit = function () {
                 clanName: $('[name="clanName"]:checked').val()
             }
 
-            console.log(gameData);
+            //console.log(gameData);
             $.post("/api/game", gameData)
                 .then(function () {
                     window.location.replace("/story/1");
@@ -46,4 +48,24 @@ var handleGameDelete = function () {
         .then(function () {
             window.location.reload();
         });
+}
+
+var handleLastStorySubmit = function () {
+    // Update the last story id for the game
+    var routeId = $(this).attr("data-route-id");
+    var gameObj = {
+        lastStoryId: routeId
+    }
+    $.ajax({
+        method: "PUT",
+        url: "/api/game",
+        data: gameObj
+    }).then(function () {
+        window.location.replace("/story/" + routeId);
+    })
+
+}
+
+var handleGameIdInSubmit = function () {
+    $.post("/api/user/game", { "mostRecentGameId": $(this).attr("data-game-id") });
 }
