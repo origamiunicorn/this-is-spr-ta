@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $(document).on("click", "#saveGameBtn", handleGameSubmit);
+    $(document).on("click", ".deleteGameBtn", handleGameDelete);
 });
 
 var handleGameSubmit = function () {
@@ -34,4 +35,15 @@ var handleGameSubmit = function () {
                 });
         }
     });
+}
+
+var handleGameDelete = function () {
+    var id = $(this).attr("data-game-id");
+    $.ajax({
+        method: "DELETE",
+        url: "/api/game/" + id
+    })
+        .then(function () {
+            window.location.reload();
+        });
 }

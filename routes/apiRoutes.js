@@ -47,4 +47,15 @@ module.exports = function (app, passport) {
         res.json({ error: err });
       });
   });
+
+  app.delete("/api/game/:id", function (req, res) {
+    // Delete the Author with the id available to us in req.params.id
+    db.GameInfo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbGame) {
+      res.json(dbGame);
+    });
+  });
 };

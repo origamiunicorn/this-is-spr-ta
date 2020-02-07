@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/index.js"></script>
 <div class="row">
     <div class="col s12">
 
@@ -8,6 +9,9 @@
                     <div class="card-content">
                         <h5 class="gameheader">{{dataValues.charName}}</h5>
                         <strong>of the {{dataValues.clanName}} clan</strong>
+                        <i data-game-id="{{dataValues.id}}"
+                            class="medium material-icons deleteGameBtn">delete_forever</i>
+
                         <div class="divider"></div>
                         <strong><a href="story/{{dataValues.lastStoryId}}">Continue Game</a></strong>
                     </div>
