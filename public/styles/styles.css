@@ -66,6 +66,10 @@ form .error{
   width: 90%;
 }
 
+.gamecards {
+  
+}
+
 @media (max-width: 640px){
 body {
   font-size: 1.3rem;
