@@ -77,7 +77,7 @@ var handleFormSubmit = function (event) {
 
             API.saveUser(userObj).then(function (data) {
                 if (data.error) {
-                    handleLoginErr(data.error.errors[0].message);
+                    handleSignUpErr(data.error.errors[0].message);
                 } else {
                     $("form[name='signupfrm']").trigger("reset");
                     window.location.replace("/profile");
@@ -87,7 +87,7 @@ var handleFormSubmit = function (event) {
     });
 }
 
-function handleLoginErr(err) {
-    $("#alert_signup .msg").text(err);
+function handleSignUpErr(err) {
+    $("#alert_signup .alert_signup_msg").html(err);
     $("#alert_signup").fadeIn(500);
 }

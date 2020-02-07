@@ -30,7 +30,8 @@
     <nav>
       <div class="nav-wrapper">
         <div class="container">
-          <a href="/" id="smalltext" class="brand-logo flow-text"><i class="material-icons">brightness_3</i> One Good
+          <a href="/" id="smalltext" class="brand-logo flow-text"><i class="material-icons">brightness_3</i> One
+            Good
             Knight</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
@@ -49,10 +50,9 @@
         </div>
     </nav>
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Dashboard</a></li>
-      <li><a href="#!">Game Info</a></li>
-      <li><a href="#!">Start New Game</a></li>
-      <li><a href="#!">Update Profile</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/game">Current Game(s)</a></li>
+      <li><a href="/start">Start New Game</a></li>
       <li class="divider"></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
@@ -64,7 +64,7 @@
           <div class="background">
             <img src="/images/stardust.png">
           </div>
-          <a href="#user"><img class="circle" src="images/loginicon.png"></a>
+          <a href="#user"><img class="circle" src="/images/loginicon.png"></a>
           <a href="#name"><span class="white-text name">{{name}}</span></a>
           <a href="#email"><span class="white-text email">{{email}}</span></a>
         </div>
@@ -72,16 +72,26 @@
       <li>
         <div class="center">{{msg}}</div>
       </li>
-      <li><a href="#!">Dashboard</a></li>
-      <li><a href="#!">Game Info</a></li>
-      <li><a href="#!">Start New Game</a></li>
-      <li><a href="#!">Update Profile</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/game">Current Game(s)</a></li>
+      <li><a href="/start">Start New Game</a></li>
       <li class="divider"></li>
       <li><a href="/logout">Logout</a></li>
       {{else}}
-      <li><a href="/">Home</a></li>
-      <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
-      <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="/images/stardust.png">
+          </div>
+          <a href="#user"><img class="circle" src="/images/loginicon.png"></a>
+          <a href="#name"><span class="white-text name">One Good Knight</span></a>
+          <a href="#email"><span class="white-text email">Login to play!</span></a>
+        </div>
+      </li>
+      <li><a href="/"><i class="material-icons">home</i> Home</a></li>
+      <div class="divider"></div>
+      <li><a class="modal-trigger" href="#signupmodal"><i class="material-icons">assignment_ind</i> Sign Up</a></li>
+      <li><a class="modal-trigger" href="#loginmodal"><i class="material-icons">account_circle</i> Login</a></li>
       {{/if}}
     </ul>
   </header>
@@ -129,7 +139,7 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="/js/login.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
 </body>
 

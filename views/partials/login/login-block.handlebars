@@ -1,25 +1,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 
-<h4 class="mobile-header">Log In to One Good Knight </h4>
+<h3 class="mobile-header">Log In to One Good Knight</h3>
 <form name="loginfrm" class="form-signin">
     <label for="inputEmail">Email Address</label>
-    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required=""
+    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required
         autofocus="">
 
     <label for="inputPassword">Password</label>
-    <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password"
-        required="">
-    {{!-- Add a "Remember Me" functionality as a bonus if we have time! --}}
-    {{!-- <div class="checkbox mb-3">
-              <label>
-                <input type="checkbox" />
-                <span>Remember Me</span>
-              </label>
-            </div> --}}
-    <div style="display: none" id="alert_login" class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span> <span class="msg"></span>
+    <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
+
+    <div style="display: none" id="alert_login" role="alert">
+        <div class="valign-wrapper">
+            <i class="medium material-icons red-text text-darken-4">error</i>
+            <p class="red-text text-darken-4 error"><strong>Error:</strong></p>
+            <br />
+            <blockquote class="msg"></blockquote>
+        </div>
     </div>
-    <button id="loginbtn" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+    <button id="loginbtn" class="btn-large waves-effect waves-light" type="submit">Login</button>
 </form>

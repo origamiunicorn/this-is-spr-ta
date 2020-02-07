@@ -3,12 +3,6 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-size: 16px;
-  /* background: 
-  linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(315deg, black 25%, transparent 25%),
-  linear-gradient(45deg, black 25%, transparent 25%);	
-  background-size: 2em 2em; */
   background-image: url("/images/nami_@2X.png");
   background-repeat: repeat;
   background-attachment: fixed;
@@ -28,6 +22,10 @@ a.brand-logo {
   padding-left: 10px;
 }
 
+.modal {
+  max-height: 80%;
+}
+
 .body-container {
   color: black;
   background-color: ghostwhite;
@@ -38,6 +36,11 @@ p.parabody {
   margin-top: -20px;
   margin-bottom: -20px;
   white-space: pre-line;
+}
+
+.error {
+  font-size: 1.3rem;
+  margin-right: 25px;
 }
 
 form .error{
@@ -70,8 +73,18 @@ form .error{
   background-color: aquamarine;
 }
 
+[type="radio"]:not(:checked) + span,
+[type="radio"]:checked + span {
+  font-size: 2rem;
+}
+
 @media (max-width: 640px){
+
   body {
+    font-size: 1.3rem;
+  }
+
+  li {
     font-size: 1.3rem;
   }
 
@@ -83,6 +96,11 @@ form .error{
   #smalltext {
     font-size: 1.5rem;  
     padding: 0px;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 80%;
   }
 
   .body-container {
@@ -99,11 +117,23 @@ form .error{
     font-size: 1.3rem;
   }
 
+  .game-end {
+    margin-bottom: 50px;
+  }
+
   .gameoffset {
     width: 80%;
   }
 
+  .delete-game {
+    font-size: 1.0rem;
+  }
+
   .mobile-header {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .page-footer {
+    font-size: 1.2rem;
   }
 };

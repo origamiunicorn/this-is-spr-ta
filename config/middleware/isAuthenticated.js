@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
     //}
 
     uObj = {
-      msg: `Welcome ${uname}`,
+      msg: `Welcome, ${uname}!`,
       name: `${uname}`,
       email: `${umail}`,
       loggedIn: loggedIn

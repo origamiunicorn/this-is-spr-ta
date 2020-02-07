@@ -7,11 +7,13 @@
             <div class="col gameoffset">
                 <div class="card gamecards" style="background: rgba(250, 250, 250, 0.8);">
                     <div class="card-content">
+                        <div class="right center-align delete-game">
+                            <i data-game-id="{{dataValues.id}}"
+                                class="small material-icons red-text text-darken-4 deleteGameBtn"
+                                alt="Delete this game.">cancel</i>
+                        </div>
                         <h5 class="gameheader">{{dataValues.charName}}</h5>
                         <strong>of the {{dataValues.clanName}} clan</strong>
-                        <i data-game-id="{{dataValues.id}}"
-                            class="medium material-icons deleteGameBtn">delete_forever</i>
-
                         <div class="divider"></div>
                         <strong><a href="story/{{dataValues.lastStoryId}}">Continue Game</a></strong>
                     </div>
@@ -20,6 +22,7 @@
         </div>
         {{/each}}
 
-        <a href="/">← Back To Home</a>
+        <a href="/" class="valign-wrapper"><i class="small material-icons">arrow_back</i> Return to Profile</a>
+
     </div>
 </div>
