@@ -36,6 +36,9 @@ module.exports = function (app) {
 
   app.get("/game", isAuthenticated, function (req, res) {
     db.GameInfo.findAll({
+      where: {
+        UserId: req.user.id
+      },
       order: [
         ['createdAt', 'DESC']
       ]
