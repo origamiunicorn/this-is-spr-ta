@@ -36,9 +36,5 @@ module.exports = function (sequelize, DataTypes) {
         Story.hasMany(models.Choice);
     };
 
-    Story.replaceCharName = function (text) {
-        return text.replace(/{{name}}/g, "John");
-    }
-
     return Story;
 };
