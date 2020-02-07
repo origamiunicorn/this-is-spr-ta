@@ -132,4 +132,8 @@ form .error{
   .mobile-header {
     font-size: 1.5rem;
   }
+
+  .page-footer {
+    font-size: 1.2rem;
+  }
 };
