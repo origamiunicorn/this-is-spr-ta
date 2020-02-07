@@ -3,12 +3,6 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-size: 16px;
-  /* background: 
-  linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-  linear-gradient(315deg, black 25%, transparent 25%),
-  linear-gradient(45deg, black 25%, transparent 25%);	
-  background-size: 2em 2em; */
   background-image: url("/images/nami_@2X.png");
   background-repeat: repeat;
   background-attachment: fixed;
@@ -26,6 +20,10 @@ main {
 a.brand-logo {
   text-decoration: none;
   padding-left: 10px;
+}
+
+.modal {
+  max-height: 80%;
 }
 
 .body-container {
@@ -76,6 +74,10 @@ form .error{
     font-size: 1.3rem;
   }
 
+  a {
+    font-size: 1.3rem;
+  }
+
   .brand-logo {
     width: 80%;
     margin: 0 auto;
@@ -84,6 +86,11 @@ form .error{
   #smalltext {
     font-size: 1.5rem;  
     padding: 0px;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 80%;
   }
 
   .body-container {
