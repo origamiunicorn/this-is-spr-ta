@@ -31,7 +31,7 @@ module.exports = function (app, passport) {
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.session.destroy(function (err) {
-      res.redirect('/');
+      res.render('index');
     });
   });
 
@@ -46,5 +46,16 @@ module.exports = function (app, passport) {
       .catch(function (err) {
         res.json({ error: err });
       });
+  });
+
+  app.delete("/api/game/:id", function (req, res) {
+    // Delete the Author with the id available to us in req.params.id
+    db.GameInfo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbGame) {
+      res.json(dbGame);
+    });
   });
 };
