@@ -57,6 +57,7 @@ form .error{
 
 .gameheader {
   margin-bottom: -3px;
+  word-wrap: break-word;
 }
 
 .gamerow {
