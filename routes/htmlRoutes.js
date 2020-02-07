@@ -26,12 +26,17 @@ module.exports = function (app) {
       include: [db.Choice]
     }).then(function (data) {
       data.dataValues.body = db.Story.replaceCharName(data.dataValues.body);
-      res.render("story", data.dataValues);
+      uObj.data = data.dataValues;
+      res.render("story", uObj);
     });
   });
 
   app.get("/game", isAuthenticated, function (req, res) {
-    db.GameInfo.findAll({}).then(function (data) {
+    db.GameInfo.findAll({
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    }).then(function (data) {
       uObj.data = data;
       res.render("game", uObj);
     });

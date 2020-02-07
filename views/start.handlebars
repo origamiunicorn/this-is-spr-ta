@@ -1,47 +1,49 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <div id="home">
     <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <h3 class="center-align">Knight's Name</h3>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Name Your Knight</label>
-            </div>
-            </form>
+        <form name="gamefrm">
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="center-align">Knight's Name</h3>
+                    <input id="icon_prefix" type="text" name="charName" class="validate">
+                    <label for="icon_prefix">Name Your Knight</label>
+                </div>
 
-            <form class="col-6">
-                <div class="row center-align">
-                    <h3>Which clan are you from?</h3>
-                    <form action="#">
+                <div class="col-6">
+                    <div class="row center-align">
+                        <h3>Which clan are you from?</h3>
                         <p>
+                            <p>
+                                <img class="circle responsive-img" src="/images/ClanRabbit.png" alt="" />
+                            </p>
                             <label>
-                                <p>
-                                    <img class="circle responsive-img" src="/images/ClanRabbit.png" alt="" />
-                                </p>
-                                <input class="with-gap" id="rabbit" name="clan" type="radio" />
+                                <input class="with-gap" value="rabbit" name="clanName" type="radio" />
                                 <span>Rabbit</span>
                             </label>
                         </p>
                         <p>
+                            <p>
+                                <img class="circle responsive-img" src="/images/ClanTiger.png" alt="" />
+                            </p>
                             <label>
-                                <p>
-                                    <img class="circle responsive-img" src="/images/ClanTiger.png" alt="" />
-                                </p>
-                                <input class="with-gap" id="tiger" name="clan" type="radio" />
+                                <input class="with-gap" value="tiger" name="clanName" type="radio" />
                                 <span>Tiger</span>
                             </label>
                         </p>
                         <p>
+                            <p>
+                                <img class="circle responsive-img" src="/images/ClanMonkey.png" alt="" />
+                            </p>
                             <label>
-                                <p>
-                                    <img class="circle responsive-img" src="/images/ClanMonkey.png" alt="" />
-                                </p>
-                                <input class="with-gap" id="monkey" name="clan" type="radio" />
+                                <input class="with-gap" value="monkey" name="clanName" type="radio" />
                                 <span>Monkey</span>
                             </label>
                         </p>
+                    </div>
+                    <button id="saveGameBtn" type="submit" class="btn btn-primary float-right">Submit</button>
+
                 </div>
-                <button id="submit" class="btn btn-primary float-right">Submit</button>
-            </form>
-        </div>
+        </form>
     </div>
 </div>
