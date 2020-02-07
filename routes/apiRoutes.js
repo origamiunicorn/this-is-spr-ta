@@ -38,11 +38,10 @@ module.exports = function (app, passport) {
 
 
   app.put("/api/user/game", function (req, res) {
-    alert(req.body.mostRecentGameId);
     var gameObj = {
       mostRecentGameId: req.body.mostRecentGameId
     }
-    db.GameInfo.update(
+    db.User.update(
       gameObj,
       {
         where: {
@@ -59,20 +58,14 @@ module.exports = function (app, passport) {
     req.body.UserId = req.user.id;
     db.GameInfo.create(req.body)
       .then(function (dbGame) {
-        //req.user.gameId = dbGame.id;
-        var gameObj = {
-          mostRecentGameId: dbGame.id
-        }
-        db.GameInfo.update(
-          gameObj,
+        db.User.update(
+          { mostRecentGameId: dbGame.id },
           {
             where: {
               id: req.user.id
             }
-          }).then(function (dbGame) {
+          }).then(function () {
             res.json(dbGame);
-          }).catch(function (err) {
-            res.json({ error: err });
           });
       })
       .catch(function (err) {
@@ -82,7 +75,6 @@ module.exports = function (app, passport) {
 
   // update the last story id for the game
   app.put("/api/game", function (req, res) {
-    console.log(req.session);
     var gameObj = {
       lastStoryId: req.body.lastStoryId
     }
@@ -90,7 +82,7 @@ module.exports = function (app, passport) {
       gameObj,
       {
         where: {
-          id: req.user.gameId
+          id: req.user.mostRecentGameId
         }
       }).then(function (dbGame) {
         res.json(dbGame);

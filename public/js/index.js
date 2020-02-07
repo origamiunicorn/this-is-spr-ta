@@ -67,5 +67,9 @@ var handleLastStorySubmit = function () {
 }
 
 var handleGameIdInSubmit = function () {
-    $.post("/api/user/game", { "mostRecentGameId": $(this).attr("data-game-id") });
+    $.ajax({
+        method: "PUT",
+        url: "/api/user/game",
+        data: { mostRecentGameId: $(this).attr("data-game-id") }
+    });
 }
