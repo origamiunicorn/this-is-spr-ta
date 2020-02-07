@@ -88,6 +88,6 @@ var handleFormSubmit = function (event) {
 }
 
 function handleSignUpErr(err) {
-    $("#alert_signup .alert_signup_msg").text(err);
+    $("#alert_signup .alert_signup_msg").html(err);
     $("#alert_signup").fadeIn(500);
 }
