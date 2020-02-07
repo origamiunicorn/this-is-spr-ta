@@ -5,12 +5,8 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Load index page
-  // app.get("/", function (req, res) {
-  //   return (loggedIn) ? res.render("profile", uObj) : res.render("index");
-  // });
-
   app.get("/", function (req, res) {
-    return res.render("index");
+    return (loggedIn) ? res.render("profile", uObj) : res.render("index");
   });
 
   app.get("/signin", function (req, res) {
