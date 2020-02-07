@@ -25,6 +25,8 @@ module.exports = function (app) {
       },
       include: [db.Choice]
     }).then(function (data) {
+      //data.dataValues.body = data.dataValues.body.replace(/{{name}}/g, req.user.charName);
+
       data.dataValues.body = db.Story.replaceCharName(data.dataValues.body);
       uObj.data = data.dataValues;
       res.render("story", uObj);
