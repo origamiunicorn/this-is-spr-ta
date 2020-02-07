@@ -99,6 +99,10 @@ form .error{
     font-size: 1.3rem;
   }
 
+  .game-end {
+    margin-bottom: 50px;
+  }
+
   .gameoffset {
     width: 80%;
   }
