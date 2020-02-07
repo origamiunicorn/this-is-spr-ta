@@ -31,7 +31,7 @@ module.exports = function (app, passport) {
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.session.destroy(function (err) {
-      res.redirect('/');
+      res.render('index');
     });
   });
 
