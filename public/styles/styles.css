@@ -73,6 +73,11 @@ form .error{
   background-color: aquamarine;
 }
 
+[type="radio"]:not(:checked) + span,
+[type="radio"]:checked + span {
+  font-size: 2rem;
+}
+
 @media (max-width: 640px){
 
   body {
