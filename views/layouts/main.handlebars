@@ -27,28 +27,30 @@
 <body>
 
   <header>
-    <nav>
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="/" id="smalltext" class="brand-logo flow-text"><i class="material-icons">brightness_3</i> One
-            Good
-            Knight</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            {{#if loggedIn}}
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                {{msg}}
-                <i class="material-icons right">more_vert</i></a></li>
-            {{else}}
-            <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
-            <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
-            {{/if}}
-          </ul>
-          <div class="right">
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="container">
+            <a href="/" id="smalltext" class="brand-logo flow-text"><i class="material-icons">brightness_3</i> One
+              Good
+              Knight</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="/">Home</a></li>
+              {{#if loggedIn}}
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                  {{msg}}
+                  <i class="material-icons right">more_vert</i></a></li>
+              {{else}}
+              <li><a class="modal-trigger" href="#signupmodal">Sign Up</a></li>
+              <li><a class="modal-trigger" href="#loginmodal">Login</a></li>
+              {{/if}}
+            </ul>
+            <div class="right">
+              <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
           </div>
-        </div>
-    </nav>
+      </nav>
+    </div>
     <ul id="dropdown1" class="dropdown-content">
       <li><a href="/profile">Profile</a></li>
       <li><a href="/game">Current Game(s)</a></li>
