@@ -38,6 +38,11 @@ p.parabody {
   white-space: pre-line;
 }
 
+.error {
+  font-size: 1.3rem;
+  margin-right: 25px;
+}
+
 form .error{
   color:red;
 }
