@@ -1,49 +1,39 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<div id="home">
-    <div class="container">
-        <form name="gamefrm">
-            <div class="row">
-                <div class="col s12">
-                    <h4 class="center-align">Name Your Knight</h4>
-                    <input id="icon_prefix" type="text" name="charName" class="validate">
-                    <label for="icon_prefix"></label>
-                </div>
+<form name="gamefrm">
+    <div class="row">
+        <div class="col s12">
+            <h4 class="center-align">Name Your Knight</h4>
+            <input id="icon_prefix" type="text" name="charName" class="validate">
+            <label for="icon_prefix"></label>
+        </div>
 
-                <div class="col s12">
-                    <div class="row center-align">
-                        <h4>Select Your Clan</h4>
-                        <p>
-                            <p>
-                                <img class="circle responsive-img" src="/images/ClanRabbit.png" alt="" />
-                            </p>
-                            <label>
-                                <input class="with-gap" value="rabbit" name="clanName" type="radio" />
-                                <span>Rabbit</span>
-                            </label>
-                        </p>
-                        <p>
-                            <p>
-                                <img class="circle responsive-img" src="/images/ClanTiger.png" alt="" />
-                            </p>
-                            <label>
-                                <input class="with-gap" value="tiger" name="clanName" type="radio" />
-                                <span>Tiger</span>
-                            </label>
-                        </p>
-                        <p>
-                            <p>
-                                <img class="circle responsive-img" src="/images/ClanMonkey.png" alt="" />
-                            </p>
-                            <label>
-                                <input class="with-gap" value="monkey" name="clanName" type="radio" />
-                                <span>Monkey</span>
-                            </label>
-                        </p>
-                        <button id="saveGameBtn" type="submit"
-                            class="btn-large waves-effect waves-light">Submit</button>
-                    </div>
-                </div>
-        </form>
+        <div class="col s12 center-align">
+            <h4>Select Your Clan</h4>
+            <label>
+                <p>
+                    <img class="circle responsive-img" src="/images/ClanRabbit.png"
+                        alt="Bust of an anthropomorphic rabbit with a serious expression facing forward while wearing samurai armor." />
+                </p>
+                <input class="with-gap" value="rabbit" name="clanName" type="radio" />
+                <span>Rabbit</span>
+            </label>
+            <label>
+                <p>
+                    <img class="circle responsive-img" src="/images/ClanTiger.png"
+                        alt="Bust of an anthropomorphic tiger with a slight smile facing forward while wearing samurai armor." />
+                </p>
+                <input class="with-gap" value="tiger" name="clanName" type="radio" />
+                <span>Tiger</span>
+            </label>
+            <label>
+                <p>
+                    <img class="circle responsive-img" src="/images/ClanMonkey.png"
+                        alt="Bust of an anthropomorphic monkey with a smile facing forward while wearing samurai armor." />
+                </p>
+                <input class="with-gap" value="monkey" name="clanName" type="radio" />
+                <span>Monkey</span>
+            </label>
+            <br />
+            <button id="saveGameBtn" type="submit" class="btn-large waves-effect waves-light">Submit</button>
+        </div>
     </div>
-</div>
+</form>
