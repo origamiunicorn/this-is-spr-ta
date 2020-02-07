@@ -66,15 +66,19 @@ form .error{
   width: 90%;
 }
 
-@media (max-width: 640px){
-body {
-  font-size: 1.3rem;
+.gamecards {
+  background-color: aquamarine;
 }
 
-.brand-logo {
-  width: 80%;
-  margin: 0 auto;
-}
+@media (max-width: 640px){
+  body {
+    font-size: 1.3rem;
+  }
+
+  .brand-logo {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   #smalltext {
     font-size: 1.5rem;  
@@ -83,6 +87,16 @@ body {
 
   .body-container {
     width: 100%;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+
+  .mobile-buttons {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
 
   .gameoffset {
