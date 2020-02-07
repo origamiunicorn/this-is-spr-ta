@@ -3,10 +3,9 @@
         <p class="parabody">
             {{data.body}}
         </p>
-        {{#if data.Choices}}
-
-        {{#each data.Choices}}
         <div class="divider story-divider"></div>
+        {{#if data.Choices}}
+        {{#each data.Choices}}
         <p>
             <a href="/story/{{dataValues.routeId}}">{{dataValues.description}}</a>
         </p>
@@ -15,7 +14,6 @@
 {{/each}}
 
 {{else}}
-<div class="divider story-divider game-end"></div>
 <br />
 <div class="center-align">
     <a class="waves-effect waves-light btn mobile-buttons" href="/profile"><i
