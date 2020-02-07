@@ -106,4 +106,8 @@ form .error{
   .gameoffset {
     width: 80%;
   }
+
+  .mobile-header {
+    font-size: 1.3rem;
+  }
 };
