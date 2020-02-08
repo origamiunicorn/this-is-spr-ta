@@ -9,7 +9,8 @@ module.exports = function (app) {
     return res.render("index");
   });
 
-  app.get("/profile", function (req, res) {
+  app.get("/profile", isAuthenticated, function (req, res) {
+    console.log(req);
     return res.render("profile", uObj);
   });
 
