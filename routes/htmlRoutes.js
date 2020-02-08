@@ -29,12 +29,16 @@ module.exports = function (app) {
       },
       include: [db.Choice]
     }).then(function (data) {
-      replaceNameTag(req, res, function (response) {
-        var text = data.dataValues.body.replace(/{{name}}/g, response.charName);
-        data.dataValues.body = text;
-        uObj.data = data.dataValues;
-        res.render("story", uObj);
-      })
+      if (data) {
+        replaceNameTag(req, res, function (response) {
+          var text = data.dataValues.body.replace(/{{name}}/g, response.charName);
+          data.dataValues.body = text;
+          uObj.data = data.dataValues;
+          res.render("story", uObj);
+        })
+      } else {
+        res.render("404");
+      }
     });
   });
 
