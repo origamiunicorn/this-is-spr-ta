@@ -1,8 +1,7 @@
 // This is middleware for restricting routes a user is not allowed to visit if not logged in
-var uname = ''; loggedIn = 0; uObj = {};
 
 module.exports = function (req, res, next) {
-
+  var uname = ''; umail = ''; loggedIn = 0; uObj = {};
   console.log("logged in outside of function:", loggedIn);
   // If the user is logged in, continue with the request to the restricted route
   if (req.user) {
@@ -26,5 +25,9 @@ module.exports = function (req, res, next) {
   }
 
   // If the user isn't logged in, redirect them to the login page
-  return res.redirect("/");
+  if (req.originalUrl != "/") {
+    return res.redirect("/");
+  } else if (!req.user) {
+    return next();
+  }
 };
