@@ -79,7 +79,7 @@ form .error{
   font-size: 2rem;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1366px){
 
   body {
     font-size: 1.3rem;
