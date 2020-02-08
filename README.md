@@ -8,6 +8,8 @@ This is all part of This Is SPR-ta's Project Two for UCLA's Fullstack Web Develo
 
 After login, a user is shown their profile page and presented with two options: "Continue Game", and "Start New Game". Selecting "Start New Game" takes users to a new page with a form. This can also be accessed from the dropdown menu in desktop view, or the menu icon and side navigation slide-out in mobile view.
 
+![Mobile navigation demo.](mobileNav.gif?raw=true "Mobile Navigation demo.")
+
 ### Start New Game
 
 On the "Start New Game" page, users are prompted to input a name for their knight, and then select one of three radio buttons for their knight's clan. These radio buttons have associated images for each, and display vertically.
@@ -24,6 +26,8 @@ Then presented with a "Start New Game" button, leading to the same form as discu
 
 If a user has one or more games in progress or completed, those games will be displayed in order from newest to oldest. The clan image for each game's knight will be displayed behind and offset from that knight's game information. The game information included is the knight's name, the name of their clan, a link to continue their game, and a floating circular icon with an x through it to delete that game's information. Deletion is permanent at this point in time.
 
+![Mobile delete game info demo.](deleteDemo.gif?raw=true "Mobile delete game info demo.")
+
 Selecting the "Continue Game" link brings the user to that knight's current place in the story, from the last time they were playing that knight.
 
 ### Game Play
@@ -31,6 +35,8 @@ Selecting the "Continue Game" link brings the user to that knight's current plac
 The text adventure game is played by selecting an option the user's knight takes to move the story forward. Each story page provides one or more options for a user to decide between, which then advances the story along the path the user decides. Each time a option forward is selected, that user's game information is updated to note the newest story page for their character.
 
 As the user continues through the story, they'll eventually reach an end. There are five different endings made possible, with various narrative consequences or rewards for each. Upon reaching a story end, the user is invited to "Return To Profile" or "Start New Game." 
+
+![Mobile functionality demo.](functionDemo.gif?raw=true "Mobile functionality demo.")
 
 ## Langauges Used
 * CSS3
