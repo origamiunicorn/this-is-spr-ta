@@ -25,11 +25,12 @@ module.exports = function (app) {
       },
       include: [db.Choice]
     }).then(function (data) {
-      //data.dataValues.body = data.dataValues.body.replace(/{{name}}/g, req.user.charName);
-
-      data.dataValues.body = db.Story.replaceCharName(data.dataValues.body);
-      uObj.data = data.dataValues;
-      res.render("story", uObj);
+      replaceNameTag(req, res, function (response) {
+        var text = data.dataValues.body.replace(/{{name}}/g, response.charName);
+        data.dataValues.body = text;
+        uObj.data = data.dataValues;
+        res.render("story", uObj);
+      })
     });
   });
 
@@ -62,3 +63,14 @@ module.exports = function (app) {
     res.render("404");
   });
 };
+
+
+function replaceNameTag(req, res, cb) {
+  db.GameInfo.findOne({
+    where: {
+      id: req.user.mostRecentGameId
+    }
+  }).then(function (data) {
+    cb(data);
+  });
+}
