@@ -55,14 +55,15 @@
             </div>
           </div>
       </nav>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/game">Current Game(s)</a></li>
+        <li><a href="/start">Start New Game</a></li>
+        <li class="divider"></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
     </div>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="/profile">Profile</a></li>
-      <li><a href="/game">Current Game(s)</a></li>
-      <li><a href="/start">Start New Game</a></li>
 
-      <li><a href="/logout">Logout</a></li>
-    </ul>
 
     <ul id="slide-out" class="sidenav">
       {{#if loggedIn}}
