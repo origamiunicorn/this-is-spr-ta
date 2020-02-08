@@ -6,7 +6,11 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    return (req.user) ? res.render("profile", uObj) : res.render("index");
+    return res.render("index");
+  });
+
+  app.get("/profile", function (req, res) {
+    return res.render("profile", uObj);
   });
 
   app.get("/signin", function (req, res) {
