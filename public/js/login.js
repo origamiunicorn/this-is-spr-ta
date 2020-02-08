@@ -40,23 +40,22 @@ var handleLogin = function (event) {
             loginUser(email, password);
         }
     });
-}
+};
 
 function loginUser(email, password) {
     $.post("/login", {
         email: email,
         password: password
+    }).then(function () {
+        window.location.replace("/profile");
     })
-        .then(function () {
-            window.location.replace("/profile");
-            // If there's an error, log the error
-        })
+        // If there's an error, log the error
         .catch(function (err) {
             handleLoginErr(err.responseText);
         });
-}
+};
 
 function handleLoginErr(err) {
     $("#alert_login .msg").html(err);
     $("#alert_login").fadeIn(500);
-}
+};

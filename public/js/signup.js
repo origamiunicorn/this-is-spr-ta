@@ -19,12 +19,6 @@ var API = {
             url: "api/user",
             type: "GET"
         });
-    },
-    deleteExample: function (id) {
-        return $.ajax({
-            url: "api/examples/" + id,
-            type: "DELETE"
-        });
     }
 };
 
@@ -85,9 +79,9 @@ var handleFormSubmit = function (event) {
             });
         }
     });
-}
+};
 
 function handleSignUpErr(err) {
     $("#alert_signup .alert_signup_msg").html(err);
     $("#alert_signup").fadeIn(500);
-}
+};
