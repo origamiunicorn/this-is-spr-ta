@@ -25,7 +25,7 @@ module.exports = function (req, res, next) {
   }
 
   // If the user isn't logged in, redirect them to the login page
-  if (req.originalUrl != "/") {
+  if (req.originalUrl !== "/") {
     return res.redirect("/");
   } else if (!req.user) {
     return next();
