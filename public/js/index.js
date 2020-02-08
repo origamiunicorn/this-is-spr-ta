@@ -28,8 +28,7 @@ var handleGameSubmit = function () {
             var gameData = {
                 charName: $('[name="charName"]').val(),
                 clanName: $('[name="clanName"]:checked').val()
-            }
-
+            };
             //console.log(gameData);
             $.post("/api/game", gameData)
                 .then(function () {
@@ -37,7 +36,7 @@ var handleGameSubmit = function () {
                 });
         }
     });
-}
+};
 
 var handleGameDelete = function () {
     var id = $(this).attr("data-game-id");
@@ -48,7 +47,7 @@ var handleGameDelete = function () {
         .then(function () {
             window.location.reload();
         });
-}
+};
 
 var handleLastStorySubmit = function () {
     // Update the last story id for the game
@@ -64,7 +63,7 @@ var handleLastStorySubmit = function () {
         window.location.replace("/story/" + routeId);
     })
 
-}
+};
 
 var handleGameIdInSubmit = function () {
     $.ajax({
@@ -72,4 +71,4 @@ var handleGameIdInSubmit = function () {
         url: "/api/user/game",
         data: { mostRecentGameId: $(this).attr("data-game-id") }
     });
-}
+};
