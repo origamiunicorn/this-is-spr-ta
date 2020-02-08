@@ -2,9 +2,12 @@
 var uname = ''; loggedIn = 0; uObj = {};
 
 module.exports = function (req, res, next) {
+
+  console.log("logged in outside of function:", loggedIn);
   // If the user is logged in, continue with the request to the restricted route
   if (req.user) {
 
+    console.log("logged in inside of function:", loggedIn);
     //if (req.session && req.session.passport && req.session.passport.user) {
     loggedIn = 1;
     uname = req.user.name;
@@ -17,6 +20,8 @@ module.exports = function (req, res, next) {
       email: `${umail}`,
       loggedIn: loggedIn
     }
+
+    console.log("logged in inside of function after value update:", loggedIn);
     return next();
   }
 
