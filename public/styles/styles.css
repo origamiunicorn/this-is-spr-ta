@@ -26,6 +26,10 @@ a.brand-logo {
   max-height: 80%;
 }
 
+#dropdown-spacer {
+  margin-bottom: 50px;
+}
+
 .body-container {
   color: black;
   background-color: ghostwhite;
