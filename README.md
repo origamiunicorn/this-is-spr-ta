@@ -10,6 +10,8 @@ After login, a user is shown their profile page and presented with two options: 
 
 ![Mobile navigation demo.](mobileNav.gif?raw=true "Mobile Navigation demo.")
 
+**For Guest Account access, please use the following login:** email: guest@guest.com, password: 1234QWER
+
 ### Start New Game
 
 On the "Start New Game" page, users are prompted to input a name for their knight, and then select one of three radio buttons for their knight's clan. These radio buttons have associated images for each, and display vertically.
