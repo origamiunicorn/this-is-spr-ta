@@ -3,14 +3,14 @@
 
 This is all part of This Is SPR-ta's Project Two for UCLA's Fullstack Web Development Coding Bootcamp (September 2019 to March 2020). 
 
+**For Guest Account access, please use the following login:** email: guest@guest.com, password: 1234QWER
+
 ## How It Works
 **One Good Knight** requires a login to play, thus when the site is visited, only the index page is rendered and presented until a user signs up for an account. Presently, the user's account stores their username, password, email address, and any associated game information tied to their account.
 
 After login, a user is shown their profile page and presented with two options: "Continue Game", and "Start New Game". Selecting "Start New Game" takes users to a new page with a form. This can also be accessed from the dropdown menu in desktop view, or the menu icon and side navigation slide-out in mobile view.
 
 ![Mobile navigation demo.](mobileNav.gif?raw=true "Mobile Navigation demo.")
-
-**For Guest Account access, please use the following login:** email: guest@guest.com, password: 1234QWER
 
 ### Start New Game
 
